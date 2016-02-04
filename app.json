@@ -1,0 +1,28 @@
+{
+  "name": "SMSheet",
+  "description": "Log Twilio SMS to a Google Spreadsheet",
+  "repository": "https://github.com/jmjavier/smsheet",
+  "keywords": ["node", "twilio", "google"],
+  "env": {
+    "GOOGLE_EMAIL" : {
+      "description": "A Google server to server user account",
+      "required": true
+    },
+    "GOOGLE_KEY" : {
+      "description": "Google API key",
+      "required": true
+    },
+    "GOOGLE_SHEET_ID" : {
+      "description": "The ID of a Google spreadsheet",
+      "required": true
+    },
+    "TWILIO_ACCOUNT_SID" : {
+      "description": "identifies your requests from Twilio webhook",
+      "required": true
+    },
+    "TWILIO_AUTH_TOKEN" : {
+      "description": "identifies your requests from Twilio webhook",
+      "required": true
+    }
+  }
+}
