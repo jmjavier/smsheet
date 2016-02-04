@@ -4,12 +4,12 @@
   "repository": "https://github.com/jmjavier/smsheet",
   "keywords": ["node", "twilio", "google"],
   "env": {
-    "GOOGLE_EMAIL" : {
-      "description": "A Google server to server user account",
+    "GOOGLE_CLIENT_EMAIL" : {
+      "description": "A Google server to server API service account ID",
       "required": true
     },
-    "GOOGLE_KEY" : {
-      "description": "Google API key",
+    "GOOGLE_PRIVATE_KEY" : {
+      "description": "Google server to server API private key",
       "required": true
     },
     "GOOGLE_SHEET_ID" : {
