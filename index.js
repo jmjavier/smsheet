@@ -1,12 +1,28 @@
+var errors = [];
 var express = require('express');
 var app = new express();
 var port = process.env.PORT || 5000;
 var bodyParser = require('body-parser');
-var twilio = require('twilio');
+
+try {
+  var twilio = require('twilio');
+} catch(e) {
+  errors.push(e);
+}
+
 var Sheet = require('./Sheet');
-var mySheet = new Sheet();
+try {
+  var mySheet = new Sheet();
+} catch(e) {
+  errors.push(e);
+}
+
 
 app.use(bodyParser.urlencoded({extended: true}));
+
+app.get('/test', function(req, res){
+  res.send(errors.join(', '));
+});
 
 app.post('/receive', twilio.webhook({ protocol: 'https' }), function(req, res) {
 
