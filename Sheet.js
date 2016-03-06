@@ -1,7 +1,9 @@
+var os = require('os');
+
 var GoogleSpreadsheet = require("google-spreadsheet");
 var creds = {
   client_email: process.env.GOOGLE_CLIENT_EMAIL,
-  private_key: process.env.GOOGLE_PRIVATE_KEY
+  private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/gi,os.EOL)
 }
 
 var Sheet = module.exports = function(){
